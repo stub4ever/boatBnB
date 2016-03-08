@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160308143538) do
+ActiveRecord::Schema.define(version: 20160308163504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20160308143538) do
   add_index "boat_reviews", ["booking_id"], name: "index_boat_reviews_on_booking_id", using: :btree
 
   create_table "boats", force: :cascade do |t|
-    t.integer  "user_id"
     t.string   "name"
     t.text     "description"
     t.string   "category"
@@ -38,9 +37,10 @@ ActiveRecord::Schema.define(version: 20160308143538) do
     t.integer  "price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "owner_id"
   end
 
-  add_index "boats", ["user_id"], name: "index_boats_on_user_id", using: :btree
+  add_index "boats", ["owner_id"], name: "index_boats_on_owner_id", using: :btree
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "renter_id"
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20160308143538) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "boat_reviews", "bookings"
-  add_foreign_key "boats", "users"
+  add_foreign_key "boats", "users", column: "owner_id"
   add_foreign_key "bookings", "boats"
   add_foreign_key "bookings", "users", column: "owner_id"
   add_foreign_key "bookings", "users", column: "renter_id"

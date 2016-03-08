@@ -20,10 +20,11 @@ alice = User.create!(first_name: "Alice", last_name: "Janssen", email: "alice@pi
 
 puts "creating boats"
 
-draak = Boat.create!(owner_id: 1, name: "Draak", description: "Mooi bootje voor gezellig dagje weg met familie", category: "speedboot", photo: "fdsff", size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
-vlinder = Boat.create!(owner_id: 3, name: "Vlinder", description: "Mooi bootje voor gezellig dagje weg met familie", category: "sloep", photo: "fdsff", size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
+draak = Boat.create!(owner: jan, name: "Draak", description: "Mooi bootje voor gezellig dagje weg met familie", category: "speedboot", photo: "fdsff", size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
+vlinder = Boat.create!(owner: alice, name: "Vlinder", description: "Mooi bootje voor gezellig dagje weg met familie", category: "sloep", photo: "fdsff", size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
 
 puts "creating booking"
 
-a = Booking.create!(boat_id: 1, check_in_date: "2016-3-19", check_out_date: "2016-3-20", description: "Graag voor 3 mensen", status: "PENDING", owner_id: 1, renter_id: 2)
+a = Booking.create!(boat: draak, check_in_date: "2016-3-19", check_out_date: "2016-3-20", description: "Graag voor 3 mensen", status: "PENDING", owner: jan, renter: klaas)
 
+puts "users, boats and bookings created!"
