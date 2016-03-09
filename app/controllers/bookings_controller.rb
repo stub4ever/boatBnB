@@ -1,5 +1,9 @@
 class BookingsController < ApplicationController
-  before_action :set_boat
+  before_action :set_boat, only: [:new, :create]
+
+  def show
+    @booking = Booking.find(params[:id])
+  end
 
   def new
     @booking = @boat.bookings.new
@@ -8,7 +12,7 @@ class BookingsController < ApplicationController
   def create
     @booking = @boat.bookings.new(booking_params)
     if @booking.save
-      redirect_to confirmation_trip_path(@booking)
+      redirect_to boat_booking_path(@booking.boat_id, @booking.id)
     else
       render :new
     end
