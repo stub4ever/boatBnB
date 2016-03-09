@@ -10,6 +10,7 @@
 User.destroy_all
 Boat.destroy_all
 Booking.destroy_all
+Boat_review.destroy_all
 
 puts "creating users"
 
@@ -27,4 +28,8 @@ puts "creating booking"
 
 a = Booking.create!(boat: draak, check_in_date: "2016-3-19", check_out_date: "2016-3-20", description: "Graag voor 3 mensen", status: "PENDING", owner: jan, renter: klaas)
 
-puts "users, boats and bookings created!"
+puts "creating boat reviews"
+
+# rev = BoatReview.create!(rating: 3, description: 41* "a", booking_id: 3)
+
+puts "users, boats, bookings, boat review created!"

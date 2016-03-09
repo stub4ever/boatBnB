@@ -5,4 +5,5 @@ class Booking < ActiveRecord::Base
 
   validates  :description, :check_in_date, :check_out_date, presence: true
   validates  :boat_id, uniqueness: true
+  validates  :description, length: { maximum: 40 }
 end
