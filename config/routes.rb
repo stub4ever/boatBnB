@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
-  resources :travels, only: [:index, :show] do
+  resources :trips, only: [:index, :show] do
     member do
       get :confirmation
     end
