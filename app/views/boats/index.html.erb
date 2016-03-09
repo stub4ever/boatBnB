@@ -1,0 +1,21 @@
+<div class="container">
+
+  <h1>Your search results</h1>
+  <div class="row">
+    <% @boats.each do |boat| %>
+    <div class="col-xs-12 col-sm-4">
+    <div class="card">
+        <%= link_to cl_image_tag(boat.photo,
+        width: 360, height: 175, crop: :fill), boat_path(boat) %>
+        <div class="card-user">
+
+          <%= boat.name %>
+        </div>
+        <div class="card-description">
+          <%= boat.category %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

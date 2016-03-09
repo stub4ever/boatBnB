@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+
+    <%= simple_form_for([:owner, @boat]) do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :address %>
+      <%= f.input :city %>
+      <%= f.input :category %>
+      <%= f.input :size %>
+      <%= f.input :price %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <label>
+      </label>
+      <%= f.button :submit, class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
