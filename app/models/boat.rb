@@ -9,4 +9,5 @@ class Boat < ActiveRecord::Base
   validates :size, :city, :address, presence: true
   validates :category, presence: true
   validates :price, presence: true, :format => {:with => /\A\d+(?:\.\d{0,2})?\z/}
+  mount_uploader :photo, PhotoUploader
 end
