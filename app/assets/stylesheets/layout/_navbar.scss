@@ -8,8 +8,23 @@
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
+  a{
+    font-weight: 700;
+    font-size: 1em;
+  }
+  a.square {
+    color: #01BAEF;
+    padding: 10px 20px;
+    border: 1.5px solid #01BAEF;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
 }
 
+a.border-left {
+  border-left: solid 1px grey;
+}
 /* Optional class to fix the navbar on top */
 .navbar-wagon-fixed {
   position: fixed;
@@ -21,7 +36,7 @@
 
 /* Navbar logo */
 .navbar-wagon-brand img {
-  width: 50px;
+  width: 90px;
 }
 
 /* Navbar right section (with form, links, button) */
@@ -44,7 +59,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: #01BAEF;
   text-decoration: none;
 }
 
@@ -104,11 +119,12 @@
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
+  text-align: center;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: $blue !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
