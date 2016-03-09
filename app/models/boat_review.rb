@@ -1,5 +1,7 @@
 class BoatReview < ActiveRecord::Base
-  belongs_to :boat, through: :booking
+  # belongs_to :boat, through: :booking
+  belongs_to :booking
+  has_one :boat, through: :booking
 
   validates :rating, presence: true
   validates_numericality_of :rating, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 5
