@@ -1,2 +1,32 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="wrapper">
+  <div class="banner">
+    <div class="container">
+      <div class="black-ground">
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="text-jumbo">
+
+            <h1> Welcome Boats</h1>
+            <p> Rent a unique recommendation boats in 190+ country. </p>
+          </div>
+        </div>
+      </div>
+
+      <form class="flex-form">
+        <input type="search" placeholder="Where to rent your boat?">
+
+        <label for="from">From</label>
+        <input type="date" name="from">
+
+        <label for="from">To</label>
+        <input type="date" name="to">
+
+        <%= select_tag "number_guest", options_for_select([ "1", "2", "3", "4", "5", "6", "7"  ]) %>
+
+        <input type="submit" value="Search">
+      </form>
+
+    </div>
+  </div>
+</div>
