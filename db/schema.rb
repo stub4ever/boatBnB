@@ -11,10 +11,62 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160308105101) do
+ActiveRecord::Schema.define(version: 20160308163504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "boat_reviews", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "rating"
+    t.integer  "booking_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "boat_reviews", ["booking_id"], name: "index_boat_reviews_on_booking_id", using: :btree
+
+  create_table "boats", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "category"
+    t.string   "photo"
+    t.integer  "size"
+    t.string   "address"
+    t.string   "city"
+    t.integer  "price"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "owner_id"
+  end
+
+  add_index "boats", ["owner_id"], name: "index_boats_on_owner_id", using: :btree
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "renter_id"
+    t.integer  "owner_id"
+    t.date     "check_in_date"
+    t.date     "check_out_date"
+    t.string   "description"
+    t.string   "status"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "boat_id"
+  end
+
+  add_index "bookings", ["boat_id"], name: "index_bookings_on_boat_id", using: :btree
+  add_index "bookings", ["owner_id"], name: "index_bookings_on_owner_id", using: :btree
+  add_index "bookings", ["renter_id"], name: "index_bookings_on_renter_id", using: :btree
+
+  create_table "renter_reviews", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "rating"
+    t.integer  "booking_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "renter_reviews", ["booking_id"], name: "index_renter_reviews_on_booking_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -29,9 +81,20 @@ ActiveRecord::Schema.define(version: 20160308105101) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "phone_number"
+    t.string   "city"
+    t.string   "address"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "boat_reviews", "bookings"
+  add_foreign_key "boats", "users", column: "owner_id"
+  add_foreign_key "bookings", "boats"
+  add_foreign_key "bookings", "users", column: "owner_id"
+  add_foreign_key "bookings", "users", column: "renter_id"
+  add_foreign_key "renter_reviews", "bookings"
 end
