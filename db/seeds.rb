@@ -10,7 +10,7 @@
 User.destroy_all
 Boat.destroy_all
 Booking.destroy_all
-Boat_review.destroy_all
+BoatReview.destroy_all
 
 puts "creating users"
 
