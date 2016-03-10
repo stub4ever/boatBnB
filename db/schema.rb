@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20160309133359) do
     t.date     "check_in_date"
     t.date     "check_out_date"
     t.text     "description"
-    t.string   "status"
+    t.string   "status",  default: "Pending"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "boat_id"
