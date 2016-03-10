@@ -13,10 +13,13 @@
   <%= @boat.size  %>
   <h4>Price per day:</h4>
   <%= @boat.price  %>
-  <%= link_to "Book now", "#", class: "btn btn-danger" %>
 
+  <%= link_to "Delete", profile_path, class: "btn btn-danger",
+  method: :delete,
+  data: { confirm: "Are you sure?" } %>
 
 
 </div>
 
 <%= link_to "New boat", new_owner_boat_path, class: "btn btn-success" %>
+<%= link_to "Back", profile_path, class: "btn btn-success" %>

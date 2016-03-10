@@ -2,17 +2,24 @@
 
   <h1><%= @boat.name  %></h1>
   <%= cl_image_tag @boat.photo, height: 300, width: 400, crop: :fill %>
+  </div>
+
+
+<div class="container">
 
   <h3>Details</h3>
 
-  <h4>Owner:</h4>
-  <%= @full_name %>
   <h4>Category:</h4>
   <%= @boat.category  %>
   <h4>Size:</h4>
   <%= @boat.size  %>
   <h4>Price per day:</h4>
   <%= @boat.price  %>
+
   <%= link_to "Book now", new_boat_booking_path(@boat), class: "btn btn-danger" %>
 
-  </div>
+  <h3>Owner:</h3>
+  <%= @full_name %>
+
+</div>
+

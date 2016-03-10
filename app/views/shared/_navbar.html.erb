@@ -15,9 +15,9 @@
       <!-- Notification -->
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
 
-        <%= link_to "Rent a boat", '#', class: "navbar-wagon-item navbar-wagon-link " %>
+        <%= link_to "Rent a boat", root_path, class: "navbar-wagon-item navbar-wagon-link " %>
 
-        <%= link_to "Name", '#', class: "navbar-wagon-item navbar-wagon-link border-left" %>
+        <%= link_to current_user.first_name, profile_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
 
       <% end %>
 
