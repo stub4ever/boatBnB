@@ -6,6 +6,8 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
+        <%= f.input :first_name, required: true, autofocus: true, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
+        <%= f.input :last_name, required: true, autofocus: true, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
         <%= f.input :email, required: true, autofocus: true, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
         <%= f.input :password, required: true, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'}, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, required: true, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
