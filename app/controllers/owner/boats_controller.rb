@@ -1,7 +1,8 @@
 class Owner::BoatsController < ApplicationController
   before_action :find_boat, only: [:show, :edit, :update, :destroy]
+
   def index
-    @boats = Boat.all
+    @boats = current_user.boats
   end
 
   def show
@@ -42,8 +43,6 @@ class Owner::BoatsController < ApplicationController
   end
 
   def find_boat
-   @boat = Boat.find(params[:id])
- end
-
-
+    @boat = current_user.boats.find(params[:id])
+  end
 end

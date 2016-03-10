@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :profile, only: [:show]
+  resource :profile, only: [:show]
 
 
   resources :boats, only: [:index, :show] do
