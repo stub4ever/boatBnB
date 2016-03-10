@@ -13,19 +13,21 @@
         </div>
       </div>
 
-      <form class="flex-form">
-        <input type="search" placeholder="Where to rent your boat?">
+      <div class="form-width">
+        <form class="flex-form">
+          <input type="search" placeholder="Where to rent your boat?">
 
-        <label for="from">From</label>
-        <input type="date" name="from">
+          <label for="from">From</label>
+          <input type="date" name="from">
 
-        <label for="from">To</label>
-        <input type="date" name="to">
+          <label for="from">To</label>
+          <input type="date" name="to">
 
-        <%= select_tag "number_guest", options_for_select([ "1", "2", "3", "4", "5", "6", "7"  ]) %>
+          <%= select_tag "number_guest", options_for_select([ "1", "2", "3", "4", "5", "6", "7"  ]) %>
 
-        <input type="submit" value="Search">
-      </form>
+          <input type="submit" value="Search">
+        </form>
+      </div>
 
     </div>
   </div>
