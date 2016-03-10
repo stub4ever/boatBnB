@@ -1,8 +1,8 @@
-### BoatBnB app 
+# BoatBnB app 
 
-#USER STORIES
+## USER STORIES
 
-## As a visitor                                                                                                    .
+### As a visitor                                                                                                    .
 
 - I can search for a boat in a city for a given check-in/check-out date
 - I can see the details of a boat (price, description, person's, availability, owner) 
@@ -11,7 +11,7 @@
 - I can sign-up for newsletter [OPTIONAL]
 
 
-## As a User                                                                                                       .
+### As a User                                                                                                       .
 
 - I can login/logout
 - I can book a boat 
@@ -21,7 +21,7 @@
 - I can view my profile page
 - I can receive booked boat conformation (by email)  [OPTIONAL]
 
-## As a Owner                                                                                                    .
+### As a Owner                                                                                                    .
 
 - I can add/edit a boat (Title/Description/photos/information/price)
 - I can delete my boat that has no booking yet
