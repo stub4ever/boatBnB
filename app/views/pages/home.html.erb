@@ -7,8 +7,8 @@
         <div class="col-lg-12">
           <div class="text-jumbo">
 
-            <h1> Welcome Boats</h1>
-            <p> Rent a unique recommendation boats in 190+ country. </p>
+            <h1> Welcome to BoatBnb</h1>
+            <p> Rent unique boats in 190+ countries. </p>
           </div>
         </div>
       </div>
@@ -16,24 +16,17 @@
       <div class="form-width">
         <%= form_tag boats_path, method: "get", class: "flex-form" do %>
           <%= text_field_tag :city, @search, placeholder: "Where to rent your boat?" %>
-          <!-- <input type="search" placeholder="Where to rent your boat?"> -->
 
           <%= label_tag(:check_in_date, "From") %>
           <%= date_field_tag(:check_in_date) %>
 
-          <!-- <label for="from">From</label>
-          <input type="date" name="from"> -->
-
           <%= label_tag(:check_out_date, "To") %>
           <%= date_field_tag(:check_out_date) %>
-
-          <!-- <label for="from">To</label>
-          <input type="date" name="to"> -->
 
           <%= select_tag :guests, options_for_select((1..20).to_a) %>
 
           <%= submit_tag("Search") %>
-          <!-- <input type="submit" value="Search"> -->
+
         <% end %>
       </div>
 
