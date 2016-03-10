@@ -19,6 +19,7 @@ jan = User.create!(first_name: "Jan", last_name: "Janssen", email: "jan@piet.nl"
 klaas = User.create!(first_name: "Klaas", last_name: "Janssen", email: "klaas@piet.nl", password: "12345678", phone_number: "4444", city: "Amsterdam", address: "Vondelpark 8")
 alice = User.create!(first_name: "Alice", last_name: "Janssen", email: "alice@piet.nl", password: "12345678", phone_number: "4444", city: "Amsterdam", address: "Vondelpark 8")
 
+
 puts "creating boats"
 
 draak = Boat.create!(owner: jan, name: "Draak", description: "Mooi bootje voor gezellig dagje weg met familie", category: "speedboot", photo: "fdsff", size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
