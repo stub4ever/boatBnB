@@ -2,7 +2,6 @@
 
   <h1><%= @boat.name  %></h1>
   <%= cl_image_tag @boat.photo, height: 300, width: 400, crop: :fill %>
-  <%= image_tag "@boat.photo" %>
 
   <h3>Details</h3>
 
@@ -14,8 +13,10 @@
   <%= @boat.size  %>
   <h4>Price per day:</h4>
   <%= @boat.price  %>
-  <%= link_to "Book now", "#", class: "btn btn-danger" %>
 
+  <%= link_to "Delete", owner_boat_path(@boat), class: "btn btn-danger",
+  method: :delete,
+  data: { confirm: "Are you sure?" } %>
 
 
 </div>

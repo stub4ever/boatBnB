@@ -18,7 +18,8 @@ puts "creating users"
 jan = User.create!(first_name: "Jan", last_name: "Janssen", email: "jan@piet.nl", password: "12345678", phone_number: "4444", city: "Amsterdam", address: "Vondelpark 8")
 klaas = User.create!(first_name: "Klaas", last_name: "Janssen", email: "klaas@piet.nl", password: "12345678", phone_number: "4444", city: "Amsterdam", address: "Vondelpark 8")
 alice = User.create!(first_name: "Alice", last_name: "Janssen", email: "alice@piet.nl", password: "12345678", phone_number: "4444", city: "Amsterdam", address: "Vondelpark 8")
-alice = User.create!(first_name: "Melchior", last_name: "R", email: "m@r.com", password: "12345678", phone_number: "4444", city: "Nijmegen", address: "Heyendaalseweg 8")
+melchior = User.create!(first_name: "Melchior", last_name: "R", email: "m@r.com", password: "12345678", phone_number: "4444", city: "Nijmegen", address: "Heyendaalseweg 8")
+rianne = User.create!(first_name: "Rianne", last_name: "W", email: "r@w.com", password: "12345678", phone_number: "4444", city: "Amsterdam", address: "Heyendaalseweg 8")
 
 puts "creating boats"
 
