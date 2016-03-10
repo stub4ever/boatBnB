@@ -21,6 +21,6 @@
 <div class="text-center">
   <h3>Bookings (<%= @bookings.size %>):</h3>
   <% @bookings.each do |booking| %>
-    <%= link_to booking.created_at, boat_booking_path(booking) %>
+  <%= link_to booking.created_at, owner_booking_path(booking) %>
   <% end %>
 </div>

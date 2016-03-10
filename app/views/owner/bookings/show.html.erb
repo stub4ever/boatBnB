@@ -1,0 +1,6 @@
+
+<h1>Booking request details</h1>
+<p><%= @booking.renter.first_name %> want to rent your boat from <%= @booking.check_in_date %> till <%= @booking.check_in_date %></p>
+<p>Booking request: <%= @booking.description %> </p>
+<%= link_to "Accept", accept_owner_booking_path(@booking.id) %>
+<%= link_to "Deny", deny_owner_booking_path(@booking.id) %>
