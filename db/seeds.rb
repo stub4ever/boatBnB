@@ -24,8 +24,10 @@ rianne = User.create!(first_name: "Rianne", last_name: "W", email: "r@w.com", pa
 
 puts "creating boats"
 
-draak = Boat.create!(owner: jan, name: "Draak", description: "Mooi bootje voor gezellig dagje weg met familie", category: "speedboot", photo: "http://tinyurl.com/hozlwtx", size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
-vlinder = Boat.create!(owner: alice, name: "Vlinder", description: "Mooi bootje voor gezellig dagje weg met familie", category: "sloep", photo: "http://www.gelderlander.nl/polopoly_fs/1.4346871.1399312047!/image/image.JPG_gen/derivatives/landscape_800_600/image-4346871.JPG", size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
+draak = Boat.create!(owner: jan, name: "Draak", description: "Mooi bootje voor gezellig dagje weg met familie", category: "speedboot", photo: "http://tinyurl.com/hozlwtx", size: 4, address:"ijspadbaan", city: "amsterdam", price: 150)
+vlinder = Boat.create!(owner: alice, name: "Vlinder", description: "Mooi bootje voor gezellig dagje weg met familie", category: "sloep", photo: "http://www.gelderlander.nl/polopoly_fs/1.4346871.1399312047!/image/image.JPG_gen/derivatives/landscape_800_600/image-4346871.JPG", size: 4, address:"ijspadbaan", city: "amsterdam", price: 150)
+vlinder = Boat.create!(owner: alice, name: "Vlinder", description: "Mooi bootje voor gezellig dagje weg met familie", category: "sloep", photo: "http://www.gelderlander.nl/polopoly_fs/1.4346871.1399312047!/image/image.JPG_gen/derivatives/landscape_800_600/image-4346871.JPG", size: 4, address:"ijspadbaan", city: "amsterdam", price: 150)
+
 
 puts "creating booking"
 

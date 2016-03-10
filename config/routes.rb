@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create, :show]
   end
 
+  # post 'search' => 'boats#search'
+
+
   resources :users, only: [:show]
 
   resources :trips, only: [:index, :show] do
