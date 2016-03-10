@@ -50,12 +50,13 @@
     padding:20px;
     background:white;
     // line-height:50px;
-    font-size: 20px;
+    font-size: 15px;
     border-radius:0;
     outline:0;
     border-right:1px solid rgba(0,0,0,0.2);
     -webkit-appearance:none;
     margin-bottom: 0;
+    color: $blue;
   }
 
   .flex-form > *:last-child {
@@ -68,16 +69,16 @@
     display: flex; // stretch equally
     justify-content: center ;
     margin-top: 50px;
-    border: 50px solid rgba(0,0,0,0.15);
     border-radius: 5px;
 
     input[type="search"] {
-      flex: 1 1 100%; // Allow to show full text
+      flex: 1 1 700px; // Allow to show full text
+
     }
   }
   .form-width {
     margin: 0 auto;
-    width: 70%;
+    width: 80%;
   }
 }
 
