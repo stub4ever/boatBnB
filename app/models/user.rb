@@ -11,5 +11,5 @@ class User < ActiveRecord::Base
   has_many :renter_reviews, through: :bookings
 
   validates :first_name, :last_name, presence: true
-  validates :city, :address, :phone_number, presence: true
+  # validates :city, :address, :phone_number, presence: true
 end
