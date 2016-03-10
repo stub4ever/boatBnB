@@ -1,30 +1,26 @@
-<div class="container">
-
-  <div class="text-center">
-    <h3>Personal info:</h3>
+<div class="banner-profile text-center">
+  <div class="black-ground">
+    <div class="profile-header-info">
+      <%= image_tag "user1.jpg", class: "avatar-profile" %>
+      <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+      <ul class="list-inline">
+        <li><i class="fa fa-map-marker"></i> <%= current_user.city  %></li>
+        <li><i class="fa fa-phone"></i> <%= current_user.phone_number %></li>
+      </ul>
+    </div>
   </div>
+</div>
 
-
-  <div class="personal">
-
-    <h4>First name:</h4>
-    <li><%= current_user.first_name %></li>
-    <h4>Last name:</h4>
-    <li><%= current_user.last_name %></li>
-    <h4>City:</h4>
-    <li><%= current_user.city  %></li>
-    <h4>Phone number:</h4>
-    <li><%= current_user.phone_number %></li>
-  </div>
-
+<div class="text-center">
   <h3>Your boats (<%= @boats.size %>):</h3>
   <% @boats.each do |boat| %>
-  <%= link_to boat.name, owner_boat_path(boat) %>
+    <%= link_to boat.name, owner_boat_path(boat) %>
   <% end %>
+</div>
 
+<div class="text-center">
   <h3>Bookings (<%= @bookings.size %>):</h3>
   <% @bookings.each do |booking| %>
   <%= link_to booking.created_at, owner_booking_path(booking) %>
   <% end %>
-
 </div>

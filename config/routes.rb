@@ -4,12 +4,15 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
 
 
-  resource :profile, only: [:show]
+  resource :profile, only: [:show, :edit, :update, :destroy]
 
 
   resources :boats, only: [:index, :show] do
     resources :bookings, only: [:new, :create, :show]
   end
+
+  # post 'search' => 'boats#search'
+
 
   resources :users, only: [:show]
 

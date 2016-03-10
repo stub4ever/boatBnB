@@ -17,15 +17,20 @@ puts "creating users"
 
 jan = User.create!(first_name: "Jan", last_name: "Janssen", email: "jan@piet.nl", password: "12345678", phone_number: "4444", city: "Amsterdam", address: "Vondelpark 8")
 klaas = User.create!(first_name: "Klaas", last_name: "Janssen", email: "klaas@piet.nl", password: "12345678", phone_number: "4444", city: "Amsterdam", address: "Vondelpark 8")
-alice = User.create!(first_name: "Alice", last_name: "Janssen", email: "alice@piet.nl", password: "12345678", phone_number: "4444", city: "Amsterdam", address: "Vondelpark 8")
+alizee = User.create!(first_name: "Alice", last_name: "Janssen", email: "alice@piet.nl", password: "12345678", phone_number: "4444", city: "Amsterdam", address: "Vondelpark 8")
 melchior = User.create!(first_name: "Melchior", last_name: "R", email: "m@r.com", password: "12345678", phone_number: "4444", city: "Nijmegen", address: "Heyendaalseweg 8")
 rianne = User.create!(first_name: "Rianne", last_name: "W", email: "r@w.com", password: "12345678", phone_number: "4444", city: "Amsterdam", address: "Heyendaalseweg 8")
 
-
 puts "creating boats"
 
-draak = Boat.create!(owner: jan, name: "Draak", description: "Mooi bootje voor gezellig dagje weg met familie", category: "speedboot", photo: "http://tinyurl.com/hozlwtx", size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
-vlinder = Boat.create!(owner: alice, name: "Vlinder", description: "Mooi bootje voor gezellig dagje weg met familie", category: "sloep", photo: "http://www.gelderlander.nl/polopoly_fs/1.4346871.1399312047!/image/image.JPG_gen/derivatives/landscape_800_600/image-4346871.JPG", size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
+draak = Boat.create!(owner: jan, name: "Draak", description: "Mooi bootje voor gezellig dagje weg met familie", category: "speedboot", photo: "/home/melchior/Downloads/sailboat.jpg", size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
+Boat.create!(owner: alizee, name: "Vlinder", description: "Mooi bootje voor gezellig dagje weg met familie", category: "sloep", photo: "/home/melchior/Downloads/sailboat.jpg", size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
+
+3.times do
+  Boat.create!(owner: alizee, name: Faker::Name.name[1..19], description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: "/home/melchior/Downloads/sailboat.jpg", size: 6, city: "Den Helder", price: 200)
+  Boat.create!(owner: melchior, name: Faker::Name.name[1..19], description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: "/home/melchior/Downloads/sailboat.jpg", size: 6, city: "Amsterdam", price: 200)
+  Boat.create!(owner: rianne, name: Faker::Name.name[1..19], description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: "/home/melchior/Downloads/sailboat.jpg", size: 6, city: "Utrecht", price: 200)
+end
 
 puts "creating booking"
 
