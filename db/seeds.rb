@@ -23,13 +23,13 @@ rianne = User.create!(first_name: "Rianne", last_name: "W", email: "r@w.com", pa
 
 puts "creating boats"
 
-draak = Boat.create!(owner: jan, name: "Draak", description: "Mooi bootje voor gezellig dagje weg met familie", category: "speedboot", photo: "image/upload/v1457607542/on3nz0tgx3gk9sm0xzoi.jpg", size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
-Boat.create!(owner: alice, name: "Vlinder", description: "Mooi bootje voor gezellig dagje weg met familie", category: "sloep", photo: "image/upload/v1457607542/on3nz0tgx3gk9sm0xzoi.jpg", size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
+draak = Boat.create!(owner: jan, name: "Draak", description: "Mooi bootje voor gezellig dagje weg met familie", category: "speedboot", photo: "/home/melchior/Downloads/sailboat.jpg", size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
+Boat.create!(owner: alizee, name: "Vlinder", description: "Mooi bootje voor gezellig dagje weg met familie", category: "sloep", photo: "/home/melchior/Downloads/sailboat.jpg", size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
 
-5.times do
-  Boat.create!(owner: alizee, name: Faker::Name.name[1..19], description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: "image/upload/v1457607542/on3nz0tgx3gk9sm0xzoi.jpg", size: 6, city: "Den Helder", price: 200)
-  Boat.create!(owner: melchior, name: Faker::Name.name[1..19], description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: "image/upload/v1457607542/on3nz0tgx3gk9sm0xzoi.jpg", size: 6, city: "Amsterdam", price: 200)
-  Boat.create!(owner: rianne, name: Faker::Name.name[1..19], description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: "image/upload/v1457607542/on3nz0tgx3gk9sm0xzoi.jpg", size: 6, city: "Utrecht", price: 200)
+3.times do
+  Boat.create!(owner: alizee, name: Faker::Name.name[1..19], description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: "/home/melchior/Downloads/sailboat.jpg", size: 6, city: "Den Helder", price: 200)
+  Boat.create!(owner: melchior, name: Faker::Name.name[1..19], description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: "/home/melchior/Downloads/sailboat.jpg", size: 6, city: "Amsterdam", price: 200)
+  Boat.create!(owner: rianne, name: Faker::Name.name[1..19], description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: "/home/melchior/Downloads/sailboat.jpg", size: 6, city: "Utrecht", price: 200)
 end
 
 puts "creating booking"
