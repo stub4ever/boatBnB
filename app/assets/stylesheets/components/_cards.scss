@@ -1,5 +1,5 @@
 .card {
-  height: 175px;
+  width: 100%;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
@@ -23,11 +23,11 @@
   bottom: 10px;
   left: 10px;
 }
-.card-description h2 {
-  font-size: 24px;
+.card-description h3 {
+  font-size: 30px;
 }
 .card-description p {
-  font-size: 13px;
+  font-size: 15px;
   }
 .card-link {
   position: absolute;
@@ -41,3 +41,9 @@
 .card-link:hover{
   opacity: 0.1;
 }
+
+
+.card-background {
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));
+}
+
