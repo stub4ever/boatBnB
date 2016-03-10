@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
 
 
-  resources :profile, only: [:show]
+  resource :profile, only: [:show]
 
 
   resources :boats, only: [:index, :show] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create, :show]
   end
 
   resources :users, only: [:show]

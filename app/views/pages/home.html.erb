@@ -13,19 +13,29 @@
         </div>
       </div>
 
-      <form class="flex-form">
-        <input type="search" placeholder="Where to rent your boat?">
+      <div class="form-width">
+        <%= form_tag boats_path, method: "get", class: "flex-form" do %>
+          <%= text_field_tag :city, @search, placeholder: "Where to rent your boat?" %>
+          <!-- <input type="search" placeholder="Where to rent your boat?"> -->
 
-        <label for="from">From</label>
-        <input type="date" name="from">
+          <%= label_tag(:check_in_date, "From") %>
+          <%= date_field_tag(:check_in_date) %>
 
-        <label for="from">To</label>
-        <input type="date" name="to">
+          <!-- <label for="from">From</label>
+          <input type="date" name="from"> -->
 
-        <%= select_tag "number_guest", options_for_select([ "1", "2", "3", "4", "5", "6", "7"  ]) %>
+          <%= label_tag(:check_out_date, "To") %>
+          <%= date_field_tag(:check_out_date) %>
 
-        <input type="submit" value="Search">
-      </form>
+          <!-- <label for="from">To</label>
+          <input type="date" name="to"> -->
+
+          <%= select_tag :guests, options_for_select((1..20).to_a) %>
+
+          <%= submit_tag("Search") %>
+          <!-- <input type="submit" value="Search"> -->
+        <% end %>
+      </div>
 
     </div>
   </div>
