@@ -27,9 +27,9 @@ draak = Boat.create!(owner: jan, name: "Draak", description: "Mooi bootje voor g
 Boat.create!(owner: alice, name: "Vlinder", description: "Mooi bootje voor gezellig dagje weg met familie", category: "sloep", photo: "image/upload/v1457607542/on3nz0tgx3gk9sm0xzoi.jpg", size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
 
 5.times do
-  Boat.create!(owner: alice, name: Faker::Name.name, description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: "image/upload/v1457607542/on3nz0tgx3gk9sm0xzoi.jpg", size: 6, city: "Den Helder", price: 200)
-  Boat.create!(owner: melchior, name: Faker::Name.name, description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: "image/upload/v1457607542/on3nz0tgx3gk9sm0xzoi.jpg", size: 6, city: "Amsterdam", price: 200)
-  Boat.create!(owner: rianne, name: Faker::Name.name, description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: "image/upload/v1457607542/on3nz0tgx3gk9sm0xzoi.jpg", size: 6, city: "Utrecht", price: 200)
+  Boat.create!(owner: alice, name: Faker::Name.name[1..19], description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: "image/upload/v1457607542/on3nz0tgx3gk9sm0xzoi.jpg", size: 6, city: "Den Helder", price: 200)
+  Boat.create!(owner: melchior, name: Faker::Name.name[1..19], description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: "image/upload/v1457607542/on3nz0tgx3gk9sm0xzoi.jpg", size: 6, city: "Amsterdam", price: 200)
+  Boat.create!(owner: rianne, name: Faker::Name.name[1..19], description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: "image/upload/v1457607542/on3nz0tgx3gk9sm0xzoi.jpg", size: 6, city: "Utrecht", price: 200)
 end
 
 puts "creating booking"
