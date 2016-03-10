@@ -14,8 +14,12 @@
 <div class="text-center">
   <h3>Your boats (<%= @boats.size %>):</h3>
   <% @boats.each do |boat| %>
-    <%= link_to boat.name, owner_boat_path(boat) %>
+  <%= link_to boat.name, owner_boat_path(boat) %>
   <% end %>
+</div>
+
+<div class="text-center">
+  <%= link_to "New boat", new_owner_boat_path, class: "btn btn-success" %>
 </div>
 
 <div class="text-center">
