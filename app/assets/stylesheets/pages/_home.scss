@@ -68,11 +68,11 @@
     display: flex; // stretch equally
     justify-content: center ;
     margin-top: 50px;
-    border: 20px solid rgba(0,0,0,0.3);
+    border: 50px solid rgba(0,0,0,0.15);
     border-radius: 5px;
 
     input[type="search"] {
-      flex: 1 1 350px; // Allow to show full text
+      flex: 1 1 100%; // Allow to show full text
     }
   }
   .form-width {
