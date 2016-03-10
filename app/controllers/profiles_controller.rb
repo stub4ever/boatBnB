@@ -4,3 +4,4 @@ class ProfilesController < ApplicationController
     @bookings = current_user.bookings
   end
 end
+
