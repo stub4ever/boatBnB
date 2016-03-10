@@ -14,7 +14,7 @@
   <h4>Price per day:</h4>
   <%= @boat.price  %>
 
-  <%= link_to "Delete", owner_boat_path(@boat), class: "btn btn-danger",
+  <%= link_to "Delete", profile_path, class: "btn btn-danger",
   method: :delete,
   data: { confirm: "Are you sure?" } %>
 

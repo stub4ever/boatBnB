@@ -17,12 +17,12 @@
     <li><%= current_user.phone_number %></li>
   </div>
 
-  <h3>Your boat(s) (<%= @boats.size %>):</h3>
+  <h3>Your boats (<%= @boats.size %>):</h3>
   <% @boats.each do |boat| %>
   <%= link_to boat.name, owner_boat_path(boat) %>
   <% end %>
 
-  <h3>Booking(s) (<%= @bookings.size %>):</h3>
+  <h3>Bookings (<%= @bookings.size %>):</h3>
   <% @bookings.each do |booking| %>
   <%= link_to booking.created_at, boat_booking_path(booking) %>
   <% end %>
