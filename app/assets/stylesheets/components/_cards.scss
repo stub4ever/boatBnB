@@ -5,6 +5,12 @@
   color: white;
   position: relative;
   margin-bottom: 75px;
+  a {
+    text-decoration: none;
+    &:hover {
+      color: $blue;
+    }
+  }
 }
 .card-user {
   position: absolute;
