@@ -1,7 +1,7 @@
 <div class="banner-profile text-center">
   <div class="black-ground">
     <div class="profile-header-info">
-      <%= image_tag "user1.jpg", class: "avatar-profile" %>
+      <%= cl_image_tag current_user.photo, height: 100, width: 100, crop: :fill, class: "avatar-profile" %>
       <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
       <ul class="list-inline">
         <li><i class="fa fa-map-marker"></i> <%= current_user.city  %></li>
