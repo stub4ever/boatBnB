@@ -1,26 +1,56 @@
 <div class="container">
 
-  <h1><%= @boat.name  %></h1>
-  <%= cl_image_tag @boat.photo, height: 300, width: 400, crop: :fill %>
 
-  <h3>Details</h3>
 
-  <h4>Owner:</h4>
-  <%= @full_name %>
-  <h4>Category:</h4>
-  <%= @boat.category  %>
-  <h4>Persons:</h4>
-  <%= @boat.size  %>
-  <h4>Price per day:</h4>
-  <%= @boat.price  %>
 
-  <%= link_to "Edit", edit_owner_boat_path(@boat), class: "btn btn-success" %>
 
-  <%= link_to "Delete", owner_boat_path(@boat), class: "btn btn-danger",
-  method: :delete,
-  data: { confirm: "Are you sure?" } %>
+ <div class="media">
+  <div class="media-body">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+        <div class="media-section">
+          <h2><%= @boat.name  %></h2>
 
+          <%= cl_image_tag @boat.photo, height: 300, width: 400, crop: :fill %>
+
+        </div>
+        <div class="media-section">
+          <p><%= @boat.description %></p>
+
+          <hr>
+          <%= link_to "Back", profile_path, class: "btn btn-primary" %>
+          <%= link_to "Edit", edit_owner_boat_path(@boat), class: "btn btn-primary" %>
+
+          <%= link_to "Delete", owner_boat_path(@boat), class: "btn btn-primary",
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="media-aside">
+          <div class="media-section">
+            <h2>Details</h2>
+
+            <h4> Location:</h4>
+            <P><%= @boat.city %></P>
+            <h4>Category:</h4>
+            <P><%= @boat.category  %> </P>
+            <h4>Guests:</h4>
+            <P><%= @boat.size  %> </P>
+            <h4>Price per day:</h4>
+            <P><%= @boat.price  %> </P>
+
+          </div>
+          <div class="media-section">
+            <%= link_to "Book now", new_boat_booking_path(@boat), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
 
-<%= link_to "Back", profile_path, class: "btn btn-success" %>
+
