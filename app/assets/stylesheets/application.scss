@@ -21,7 +21,12 @@
 }
 
 .container {
-  width: 90%;
+  width: 100%;
+}
+
+.reduced-container {
+  width: 70%;
+  margin: 0 auto;
 }
 
 html {
@@ -29,7 +34,8 @@ html {
     min-height: 100%;
 }
 body {
-    margin: 0 0 200px; /* bottom = footer height */
+    margin: 0 0 250px; /* bottom = footer height */
+    background-color: #f1f2f1;
 }
 
 .footer-container {
