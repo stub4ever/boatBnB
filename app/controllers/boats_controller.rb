@@ -12,6 +12,7 @@ class BoatsController < ApplicationController
 
   def show
     @boat = Boat.find(params[:id])
+    # @categories = ['Kayak', 'Cabin Cruiser', 'Motor Boat', 'Sail Boat', 'Fishing Boat']
     @full_name = @boat.owner.first_name + " " + @boat.owner.last_name
 
     @markers = Gmaps4rails.build_markers(@boat) do |boat, marker|

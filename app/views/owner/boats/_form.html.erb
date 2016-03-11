@@ -1,22 +1,25 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">
+<%  @categories = ['Kayak', 'Cabin Cruiser', 'Motor Boat', 'Sail Boat', 'Fishing Boat'] %>
+
+<div class="text-center">
+    <h2>Add a new boat</h2>
+    <hr style="width: 20em;">
 
     <%= simple_form_for([:owner, @boat]) do |f| %>
       <%= f.error_notification %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :address %>
-      <%= f.input :city %>
-      <%= f.input :category %>
-      <%= f.input :size %>
-      <%= f.input :price %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <label>
-      </label>
+      <%= f.input :name, :label => "Boat name", :input_html => {class: 'normal-form'} %>
+      <%= f.input :address, :input_html => {class: 'normal-form'} %>
+      <%= f.input :city, :input_html => {class: 'normal-form'} %>
+      <br>
+      <div class="form-inline">
+        <%= f.input :price, :collection => (10..250).step(10), :input_html => {class: 'inline-form'} %>
+        <%= f.input :size, :collection => (1..10), :input_html => {class: 'inline-form'} %>
+      </div>
+      <br>
+      <%= f.input :category, :collection => @categories, :input_html => {class: 'inline-form', style: 'width: 10em;'} %>
+      <%= f.input :description, :input_html => {class: 'normal-form'} %>
+
+      <%= f.input :photo_cache, :label => "Boat name", as: :hidden %>
+      <hr style="width: 20em;">
       <%= f.button :submit, class: "btn btn-success" %>
       <% end %>
-    </div>
-  </div>
 </div>
