@@ -10,6 +10,7 @@ class BoatsController < ApplicationController
 
   def show
     @boat = Boat.find(params[:id])
+    # @categories = ['Kayak', 'Cabin Cruiser', 'Motor Boat', 'Sail Boat', 'Fishing Boat']
   end
 end
 
