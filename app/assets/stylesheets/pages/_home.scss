@@ -83,4 +83,39 @@
 }
 
 
+// home cards
+
+
+.card-home {
+  height: 300px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  margin-bottom: 75px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.city-small h2 {
+  font-size: 25px;
+  font-weight: 700;
+}
+.city-small p {
+  font-size: 20px;
+}
+
+
+.city-large h2 {
+  font-size: 35px;
+  font-weight: 700;
+}
+.city-large p {
+  font-size: 20px;
+}
+
+
+
+
 
