@@ -1,13 +1,25 @@
 <div class="container" style="text-align: center;">
-  <h1>Your boat trips</h1>
+  <h1>Your boat trips (<%= @trips.size %>)</h1>
+</div>
 
-  <div class="container">
-    <% @trips.each do |trip| %>
-      <p>Name of the boat: <%= trip.boat.name %></p>
-      <p>Your request: <%= trip.description %></p>
-      <p>Status: <%= trip.status %></p>
-      <p>Want to sail from <%= trip.check_in_date %> till <%= trip.check_out_date %> </p>
-      <%= link_to "boat details", boat_path(trip.boat) %>
-    <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+      <% @trips.each do |trip| %>
+      <div class="product">
+          <div class="product-image">
+            <%= cl_image_tag trip.boat.photo, class: "product-image hidden-xs" %>
+          </div>
+          <div class='product-body'>
+          <h4><%= trip.boat.name %></h4>
+          <p>Your request: <%= trip.description %></p>
+          <p>Status: <%= trip.status %></p>
+          <p>Want to sail from <%= trip.check_in_date %> till <%= trip.check_out_date %> </p>
+          <%= link_to "boat details", boat_path(trip.boat) %>
+        </div>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -23,13 +23,13 @@ rianne = User.create!(first_name: "Rianne", last_name: "W", email: "r@w.com", pa
 
 puts "creating boats"
 
-draak = Boat.create!(owner: jan, name: "Draak", description: "Mooi bootje voor gezellig dagje weg met familie", category: "speedboot", photo: File.open(Rails.root.join("db/fixtures/images/sailboot.jpg")), size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
-Boat.create!(owner: alizee, name: "Vlinder", description: "Mooi bootje voor gezellig dagje weg met familie", category: "sloep", photo: File.open(Rails.root.join("db/fixtures/images/sailboot.jpg")), size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
+draak = Boat.create!(owner: jan, name: "Draak", description: "Mooi bootje voor gezellig dagje weg met familie", category: "speedboot", photo: File.open(Rails.root.join("db/fixtures/images/478116577.jpg")), size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
+Boat.create!(owner: alizee, name: "Vlinder", description: "Mooi bootje voor gezellig dagje weg met familie", category: "sloep", photo: File.open(Rails.root.join("db/fixtures/images/478116577.jpg")), size: 4, address:"ijspadbaan", city: "Amsterdam", price: 150)
 
 3.times do
-  Boat.create!(owner: alizee, name: Faker::Name.name[1..19], description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: File.open(Rails.root.join("db/fixtures/images/sailboot.jpg")), size: 6, city: "Den Helder", price: 200)
+  Boat.create!(owner: alizee, name: Faker::Name.name[1..19], description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: File.open(Rails.root.join("db/fixtures/images/zeilboot.jpg")), size: 6, city: "Den Helder", price: 200)
   Boat.create!(owner: melchior, name: Faker::Name.name[1..19], description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: File.open(Rails.root.join("db/fixtures/images/sailboot.jpg")), size: 6, city: "Amsterdam", price: 200)
-  Boat.create!(owner: rianne, name: Faker::Name.name[1..19], description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: File.open(Rails.root.join("db/fixtures/images/sailboot.jpg")), size: 6, city: "Utrecht", price: 200)
+  Boat.create!(owner: rianne, name: Faker::Name.name[1..19], description: "Mooi bootje voor gezellig dagje weg met familie", address: Faker::Address.street_address, category: "sailboat", photo: File.open(Rails.root.join("db/fixtures/images/zeilboot2.jpg")), size: 6, city: "Utrecht", price: 200)
 end
 
 puts "creating booking"
