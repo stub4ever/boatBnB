@@ -15,21 +15,89 @@
 
       <div class="form-width">
         <%= form_tag boats_path, method: "get", class: "flex-form" do %>
-          <%= text_field_tag :city, @search, placeholder: "Where to rent your boat?" %>
+        <%= text_field_tag :city, @search, placeholder: "Where to rent your boat?" %>
 
-          <%= label_tag(:check_in_date, "From") %>
-          <%= date_field_tag(:check_in_date) %>
+        <%= label_tag(:check_in_date, "From") %>
+        <%= date_field_tag(:check_in_date) %>
 
-          <%= label_tag(:check_out_date, "To") %>
-          <%= date_field_tag(:check_out_date) %>
+        <%= label_tag(:check_out_date, "To") %>
+        <%= date_field_tag(:check_out_date) %>
 
-          <%= select_tag :guests, options_for_select((1..20).to_a) %>
+        <%= select_tag :guests, options_for_select((1..20).to_a) %>
 
-          <%= submit_tag("Search") %>
+        <%= submit_tag("Search") %>
 
         <% end %>
       </div>
-
     </div>
   </div>
 </div>
+
+<div class="reduced-container">
+  <div class="container">
+    <h2 class="title text-center"> Plan a trip on a boat </h2>
+
+      <!-- <div class="width-70"> -->
+      <div class="row">
+        <div class="col-xs-12 col-sm-3">
+            <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'city4.jpg'%>);">
+              <div class="city-small">
+                <h2> Amsterdam</h2>
+              </div>
+              <!-- <img class="card-user avatar" src="user.jpg"> -->
+              <%= link_to "Amsterdam", boats_path(city: "Amsterdam"), class: "card-link" %>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-3">
+            <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'city1.jpg'%>);">
+              <div class="city-small">
+                <h2>Utrecht</h2>
+              </div>
+              <!-- <img class="card-user avatar" src="user.jpg"> -->
+              <%= link_to "Utrecht", boats_path(city: "Utrecht"), class: "card-link" %>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-3">
+            <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'city2.jpg'%>);">
+              <div class="city-small">
+                <h2>Nijmegen</h2>
+              </div>
+              <!-- <img class="card-user avatar" src="user.jpg"> -->
+              <%= link_to "Nijmegen", boats_path(city: "Nijmegen"), class: "card-link" %>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-3">
+            <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'city3.jpg'%>);">
+              <div class="city-small">
+                <h2>Rotterdam</h2>
+              </div>
+              <!-- <img class="card-user avatar" src="user.jpg"> -->
+              <%= link_to "Rotterdam", boats_path(city: "Rotterdam"), class: "card-link" %>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+            <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'city5.jpg'%>);">
+              <div class="city-large">
+                <h2>Den Bosch</h2>
+              </div>
+              <!-- <img class="card-user avatar" src="user.jpg"> -->
+              <%= link_to "Den", boats_path(city: "Den Bosch"), class: "card-link" %>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+            <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'city6.jpg'%>);">
+              <div class="city-large">
+                <h2>Alkmaar</h2>
+              </div>
+              <!-- <img class="card-user avatar" src="user.jpg"> -->
+              <%= link_to "Alkmaar", boats_path(city: "Alkmaar"), class: "card-link" %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
