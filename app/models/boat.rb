@@ -10,4 +10,10 @@ class Boat < ActiveRecord::Base
   validates :category, presence: true
   validates :price, presence: true, :format => {:with => /\A\d+(?:\.\d{0,2})?\z/}
   mount_uploader :photo, PhotoUploader
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
+  def address
+    [city].compact.join(', ')
+  end
 end

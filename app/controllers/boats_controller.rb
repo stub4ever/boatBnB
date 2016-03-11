@@ -6,11 +6,18 @@ class BoatsController < ApplicationController
     @boats = @boats.where("lower(city) = ?", params[:city].downcase) if params[:city].present?
     @boats = @boats.where("size >= ?", params[:guests]) if params[:guests].present?
     # SELECT * FROM boats WHERE LOWER(city) = 'amsterdam' AND size >= 5
+
+    # Let's DYNAMICALLY build the markers for the view.
   end
 
   def show
     @boat = Boat.find(params[:id])
     @full_name = @boat.owner.first_name + " " + @boat.owner.last_name
+
+    @markers = Gmaps4rails.build_markers(@boat) do |boat, marker|
+      marker.lat boat.latitude
+      marker.lng boat.longitude
+    end
   end
 
 end

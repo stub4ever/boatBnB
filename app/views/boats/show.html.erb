@@ -22,7 +22,7 @@
 
             <h4>About the owner</h4>
             <p><%= @full_name %></p>
-            <p><%= link_to "View profile", user_path, class: "btn btn-primary"  %></p>
+            <p><%= link_to "View profile", user_path(@boat.owner), class: "btn btn-primary"  %></p>
 
           </div>
         </div>
@@ -50,4 +50,19 @@
     </div>
   </div>
 
+</div>
+
+<div id="map" style="width: 100%; height: 600px;">
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).on('ready', function() {
+      handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function(){
+        markers = handler.addMarkers(<%= raw @markers.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
+    })
+  <% end %>
+<% end %>
 </div>
