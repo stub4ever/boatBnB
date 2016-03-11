@@ -12,5 +12,6 @@ class BoatsController < ApplicationController
     @boat = Boat.find(params[:id])
     @full_name = @boat.owner.first_name + " " + @boat.owner.last_name
   end
+
 end
 
