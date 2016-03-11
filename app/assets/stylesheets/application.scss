@@ -30,6 +30,7 @@ html {
 }
 body {
     margin: 0 0 200px; /* bottom = footer height */
+    background-color: #f1f2f1;
 }
 
 .footer-container {
@@ -38,4 +39,8 @@ body {
     bottom: 0;
     height: 200px;
     width: 100%;
+}
+
+body {
+  background-color: #f1f2f1;
 }
