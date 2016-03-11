@@ -15,7 +15,7 @@ BoatReview.destroy_all
 puts "creating users"
 
 
-jan = User.create!(first_name: "Jan", last_name: "Janssen", email: "jan@piet.nl", password: "12345678", phone_number: "4444", city: "Amsterdam", address: "Vondelpark 8")
+jan = User.create!(first_name: "Jan", last_name: "Janssen", email: "jan@piet.nl", password: "12345678", phone_number: "4444", city: "Amsterdam", address: "Vondelpark 8", photo: "user1.jpg")
 klaas = User.create!(first_name: "Klaas", last_name: "Janssen", email: "klaas@piet.nl", password: "12345678", phone_number: "4444", city: "Amsterdam", address: "Vondelpark 8")
 alizee = User.create!(first_name: "Alice", last_name: "Janssen", email: "alice@piet.nl", password: "12345678", phone_number: "4444", city: "Amsterdam", address: "Vondelpark 8")
 melchior = User.create!(first_name: "Melchior", last_name: "R", email: "m@r.com", password: "12345678", phone_number: "4444", city: "Nijmegen", address: "Heyendaalseweg 8")

@@ -1,25 +1,68 @@
+
+<div class="banner-small" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url(<%= cl_image_path @boat.photo, height: 400, width: 1600, crop: :fill %>) ">
+</div>
+
+
 <div class="container">
 
-  <h1><%= @boat.name  %></h1>
-  <%= cl_image_tag @boat.photo, height: 300, width: 400, crop: :fill %>
+  <div class="media">
+    <div class="media-body">
+      <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+          <div class="media-section">
+            <h2><%= @boat.name  %></h2>
+
+            <%= cl_image_tag @boat.photo, height: 300, width: 400, crop: :fill %>
+
+          </div>
+          <div class="media-section">
+            <p><%= @boat.description %></p>
+
+            <hr>
+
+            <h4>About the owner</h4>
+            <p><%= @full_name %></p>
+            <p><%= link_to "View profile", user_path(@boat.owner), class: "btn btn-primary"  %></p>
+
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="media-aside">
+            <div class="media-section">
+              <h2>Details</h2>
+
+              <h4> Location:</h4>
+              <P><%= @boat.city %></P>
+              <h4>Category:</h4>
+              <P><%= @boat.category  %> </P>
+              <h4>Guests:</h4>
+              <P><%= @boat.size  %> </P>
+              <h4>Price per day:</h4>
+              <P><%= @boat.price  %> </P>
+
+            </div>
+            <div class="media-section">
+              <%= link_to "Book now", new_boat_booking_path(@boat), class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-
-<div class="container">
-
-  <h3>Details</h3>
-
-  <h4>Category:</h4>
-  <%= @boat.category  %>
-  <h4>Size:</h4>
-  <%= @boat.size  %>
-  <h4>Price per day:</h4>
-  <%= @boat.price  %>
-
-  <%= link_to "Book now", new_boat_booking_path(@boat), class: "btn btn-danger" %>
-
-  <h3>Owner:</h3>
-  <%= @full_name %>
 
 </div>
 
+<div id="map" style="width: 100%; height: 600px;">
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).on('ready', function() {
+      handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function(){
+        markers = handler.addMarkers(<%= raw @markers.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
+    })
+  <% end %>
+<% end %>
+</div>
