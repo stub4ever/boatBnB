@@ -1,0 +1,11 @@
+<div class="container" style="text-align: center">
+  <h1>Here are your bookings</h1>
+  <% @bookings.each do |booking| %>
+    <div class="container">
+      <h4>Request by: <%= booking.renter.first_name %></h4>
+      <p>Contact information: <%= booking.renter.email %>, tel: <%= booking.renter.phone_number %></p>
+      <p>About the booking: <%= booking.description %></p>
+      <p>Status: <%= booking.status %></p>
+    </div>
+  <% end %>
+</div>
