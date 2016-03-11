@@ -1,30 +1,72 @@
 <div class="banner-profile text-center">
   <div class="black-ground">
-    <div class="profile-header-info">
-      <%= cl_image_tag current_user.photo, height: 100, width: 100, crop: :fill, class: "avatar-profile" %>
-      <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
-      <ul class="list-inline">
-        <li><i class="fa fa-map-marker"></i> <%= current_user.city  %></li>
-        <li><i class="fa fa-phone"></i> <%= current_user.phone_number %></li>
-      </ul>
+      <div class="profile-header-info">
+        <%= cl_image_tag current_user.photo, height: 100, width: 100, crop: :fill, class: "avatar-profile" %>
+        <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+        <ul class="list-inline">
+          <li><i class="fa fa-map-marker"></i> <%= current_user.city  %></li>
+          <li><i class="fa fa-phone"></i> <%= current_user.phone_number %></li>
+        </ul>
+      </div>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="container text-center">
+    <h3>Your boats (<%= @boats.size %>):</h3>
+    <%= link_to "Add a boat", new_owner_boat_path, class: "btn btn-primary" %>
+    </div>
+    <div class="container">
+      <div class="row">
+        <% @boats.each do |boat| %>
+        <div class="col-sm-6 col-sm-offset-3">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path boat.photo %>');">
+
+              <div class="card-category"><%= boat.category %></div>
+              <div class="card-description">
+                <h2><%= boat.name %></h2>
+                <p><%= boat.description%></p>
+              </div>
+              <%= link_to "View boat", owner_boat_path(boat), class: "btn btn-primary card-user" %>
+          </div>
+         </div>
+        <% end %>
+      </div>
+
+  </div>
+</div>
+
+
+<div class="text-center">
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="text-center">
+        <h3>Boat bookings (<%= @bookings.size %>):</h3>
+        <% @bookings.each do |booking| %>
+          <p><strong><%= booking.boat.category %> <%= booking.boat.name %></strong></p>
+          <p>From <%= booking.check_in_date %> till <%= booking.check_out_date %> </p>
+          <%= link_to "Accept/Deny", owner_booking_path(booking), class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <div class="text-center">
+        <h3>Boat trips (<%= @trips.size %>):</h3>
+        <% @trips.each do |trip| %>
+          <p><strong> <%= trip.boat.name %> </strong></p>
+          <p><%= trip.description %></p>
+          <p><strong>Status</strong> - <%= trip.status %></p>
+          <p>Rent it from <strong><%= trip.check_in_date %></strong> till <strong><%= trip.check_out_date %></strong></p>
+          <%= link_to "boat details", boat_path(trip.boat) %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="text-center">
-  <h3>Your boats (<%= @boats.size %>):</h3>
-  <% @boats.each do |boat| %>
-  <%= link_to boat.name, owner_boat_path(boat) %>
-  <% end %>
-</div>
 
-<div class="text-center">
-  <%= link_to "New boat", new_owner_boat_path, class: "btn btn-success" %>
-</div>
-
-<div class="text-center">
-  <h3>Bookings (<%= @bookings.size %>):</h3>
-  <% @bookings.each do |booking| %>
-  <%= link_to booking.created_at, owner_booking_path(booking) %>
-  <% end %>
-</div>
