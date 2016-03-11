@@ -15,7 +15,7 @@
               <p><%= boat.description %></p>
             </div>
             <div class="card-footer">
-              <h3><%= link_to boat.city %> <span>€<%= boat.price %></span></h3>
+              <h3><%= link_to boat.city, boats_path(city: boat.city) %> <span>€<%= boat.price %></span></h3>
               </div>
             <!-- <img class="card-user avatar" src="user.jpg"> -->
             <%= link_to "", boat_path(boat), class: "card-link" %>
