@@ -19,5 +19,6 @@ class BoatsController < ApplicationController
       marker.lng boat.longitude
     end
   end
+
 end
 
