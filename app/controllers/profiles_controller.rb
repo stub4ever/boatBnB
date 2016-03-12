@@ -10,14 +10,14 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @user = current_user.update!(account_update_params)
-    redirect_to profile_boat_path
+    current_user.update!(account_update_params)
+    redirect_to profile_path
   end
 
   private
 
   def account_update_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password, :photo, :photo_cache)
+    params.require(current_user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password, :photo, :photo_cache)
   end
 end
 
