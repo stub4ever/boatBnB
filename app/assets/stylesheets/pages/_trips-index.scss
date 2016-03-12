@@ -80,6 +80,10 @@
 .product:hover {
   background: #ffffff;
   cursor: pointer;
+
+  a:hover {
+    text-decoration: none !important;
+  }
 }
 .product-upvote:hover {
   color: #5898f1;
