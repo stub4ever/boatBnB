@@ -1,13 +1,18 @@
-<div class="container">
+<div class="padded text-center">
 
-<%= @user.photo  %>
+  <div class="container">
 
-<h1> <%= @full_name %> </h1>
+    <%= cl_image_tag @user.photo, height: 100, width: 100, crop: :fill, class: "avatar-profile" %>
 
-<h3>Details</h3>
-<%= @user.city  %>
-<%= @user.address  %>
-<%= @user.email %>
-<%= @user.phone_number %>
+    <h1> <%= @full_name %> </h1>
 
+    <h3>Details</h3>
+    <ul>
+      <li><%= @user.city  %></li>
+      <li><%= @user.address  %></li>
+      <li><%= @user.email %></li>
+      <li><%= @user.phone_number %></li>
+    </ul>
+
+  </div>
 </div>
