@@ -6,18 +6,18 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-
+    @profile = current_user
   end
 
   def update
-    current_user.update!(account_update_params)
+    @profile.update!(account_update_params)
     redirect_to profile_path
   end
 
   private
 
   def account_update_params
-    params.require(current_user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password, :photo, :photo_cache)
+    params.require(@user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password, :photo, :photo_cache)
   end
 end
 

@@ -32,6 +32,8 @@ source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
 
+gem "letter_opener", group: :development
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
