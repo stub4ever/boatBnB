@@ -1,4 +1,5 @@
-# BoatBnB app  https://boatbnb.herokuapp.com/
+# BoatBnB app  
+https://boatbnb.herokuapp.com/
 
 ## USER STORIES
 
